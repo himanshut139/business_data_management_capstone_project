@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %} Groceasy {% endblock %}
+
+{% block content %}
+<h2> List of all the Categories </h2>
+<div>
+    <p> Create Category </p> <a href="/create/category">Click here</a>
+</div>
+<table>
+    <tr>
+        <th> S.No. </th>
+        <th> Name </th>
+    </tr>
+    {% for one in all %}
+    <tr>
+        <td> {{loop.index}} </td>
+        <td> {{one['name']}} </td>
+        <td> <button type="button" class="btn btn-danger"> <a href="/c_id={{ one['id'] }}/update/category"> update </button>
+        </td>
+        <td> <button type="button" class="btn btn-danger"> <a href="/c_id={{ one['id'] }}/delete/category"> delete </button>
+        </td>
+    </tr>
+    {% endfor %}
+    <tr>
+        
+        <td>  </td>
+    </tr>
+</table>
+{% endblock %}

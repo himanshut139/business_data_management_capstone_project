@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %} Manager Login {% endblock %}
+
+{% block content %}
+<h1> Update a Category </h1>
+<form method="post" action="/c_id={{ id }}/update/category">
+    <label> Enter the new name: </label>
+    <input name="newname" type="text"/>
+
+    <br><br>
+
+    <input type="submit" value="Update" />
+
+</form>
+{% endblock %}

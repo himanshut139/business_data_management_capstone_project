@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %} User Login {% endblock %}
+
+{% block content %}
+    <h1> Admin Login </h1>
+<form action="#" method="POST">
+    <div class="admin_login", style="border: 1px solid black ; width: 50%; height: 120px">
+    <table>
+        <tr>
+            <td> Username: </td><td> <input type="text" name="user_name", placeholder="USERNAME"> </td>
+        </tr>
+        <tr>
+            <td> Password: </td><td> <input type="password" name="password", placeholder="password"> </td>
+        </tr>
+    </table>
+    <br>
+    <input class="button" type="submit" formaction="/admin/login" value="Login" />
+    <br>
+    </div>
+</form>
+
+</div>
+{% endblock %}

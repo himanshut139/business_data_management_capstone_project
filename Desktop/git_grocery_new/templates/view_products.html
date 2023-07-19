@@ -1,0 +1,35 @@
+<!-- THIS PAGE WILL BE AVAILABLE TO THE ADMIN  -->
+{% extends 'base.html' %}
+{% block title %} Groceasy {% endblock %}
+
+{% block content %}
+<h2> Products - Admin's Portal </h2>
+<div>
+    <p> Create Product </p> <a href="/add/product">Click here</a>
+</div>
+<table>
+    <tr>
+        <th> S.No. </th>
+        <th> Name </th>
+        <th> Expiry date </th>
+        <th> Price per unit (in Rs) </th>
+        <th> Available quantity </th>
+    </tr>
+    {% for one in all %}
+    <tr>
+        <td> {{loop.index}} </td>
+        <td> {{one['name']}} </td>
+        <td> {{one['exp_date']}} </td>
+        <td> {{one['rate_per_unit']}} </td>
+        <td> {{one['qnt_avl']}} </td>
+        <td> <button type="button" class="btn btn-danger"> <a href="/p_id={{ one['id'] }}/update/product"> update </button>
+        <td> <button type="button" class="btn btn-danger"> <a href="/p_id={{ one['id'] }}/delete/product"> delete </button>
+        </td>
+    </tr>
+    {% endfor %}
+    <tr>
+        
+        <td>  </td>
+    </tr>
+</table>
+{% endblock %}
